@@ -1,0 +1,14 @@
+[Unit]
+Description = Binance vote
+
+[Service]
+User = root
+Type = simple
+PIDFile = /root/binance/trades.pid
+WorkingDirectory=/root/binance
+ExecStart = /usr/bin/nodejs /root/binance/index.js
+Restart = on-abort
+
+[Install]
+WantedBy = multi-user.target
+
